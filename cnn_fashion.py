@@ -1,9 +1,15 @@
+"""
+Created on Sun Mar  15 10:48:36 2020
+
+@author: Zhang Zihao
+@organization: UCAS;WHIGG (server time:201806-202106)
+Ackonwledge:(1)https://www.icourse163.org/course/PKU-1002536002; (2)https://www.bilibili.com/video/av95051759
+"""
 import tensorflow as tf
 
 fashion_mnist = tf.keras.datasets.fashion_mnist
+
 (x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
-print(x_train.shape)
-print(x_train.shape[0])
 x_train = x_train.reshape(x_train.shape[0], x_train.shape[1], x_train.shape[2], 1)
 x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], x_test.shape[2], 1)
 x_train = x_train / 255.0; x_test = x_test / 255.0
